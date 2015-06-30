@@ -1,4 +1,4 @@
-angular.module('enterleagueApp')
+angular.module('basestationApp')
   .factory('Channels', function($firebaseArray, FirebaseUrl){
     var ref = new Firebase(FirebaseUrl+'channels');
     var channels = $firebaseArray(ref);

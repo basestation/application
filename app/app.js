@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('enterleagueApp', [
+  .module('basestationApp', [
     'firebase',
     'angular-md5',
     'ui.router'
@@ -125,4 +125,4 @@ angular
 
     $urlRouterProvider.otherwise('/');
   })
-  .constant('FirebaseUrl', 'https://enterleague-dev.firebaseio.com/');
+  .constant('FirebaseUrl', 'https://basestation.firebaseio.com/');

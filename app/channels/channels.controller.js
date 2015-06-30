@@ -1,4 +1,4 @@
-angular.module('enterleagueApp')
+angular.module('basestationApp')
   .controller('ChannelsCtrl', function($state, Auth, Users, profile, channels){
     var channelsCtrl = this;
     channelsCtrl.profile = profile;

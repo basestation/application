@@ -1,4 +1,4 @@
-angular.module('enterleagueApp')
+angular.module('basestationApp')
   .controller('AuthCtrl', function(Auth, $state){
     var authCtrl = this;
 

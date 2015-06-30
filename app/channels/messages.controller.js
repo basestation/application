@@ -1,4 +1,4 @@
-angular.module('enterleagueApp')
+angular.module('basestationApp')
   .controller('MessagesCtrl', function(profile, channelName, messages){
     var messagesCtrl = this;
     messagesCtrl.messages = messages;

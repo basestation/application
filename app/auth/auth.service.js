@@ -1,4 +1,4 @@
-angular.module('enterleagueApp')
+angular.module('basestationApp')
   .factory('Auth', function($firebaseAuth, FirebaseUrl){
     var ref = new Firebase(FirebaseUrl);
     var auth = $firebaseAuth(ref);

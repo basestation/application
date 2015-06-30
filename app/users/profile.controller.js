@@ -1,4 +1,4 @@
-angular.module('enterleagueApp')
+angular.module('basestationApp')
   .controller('ProfileCtrl', function($state, md5, auth, profile){
     var profileCtrl = this;
     profileCtrl.profile = profile;
