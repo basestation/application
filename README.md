@@ -1,3 +1,5 @@
-# application
+# Basestation
 =======
-Basestation Firebase Application
+Real-Time Service and Configuration Management
+
+Built with Firebase, Angular, AngularFire, Bootstrap, Bower, Grunt, Yeoman
