@@ -14,7 +14,7 @@ angular
         resolve: {
           requireNoAuth: function($state, Auth){
             return Auth.$requireAuth().then(function(auth){
-              $state.go('channels');
+              $state.go('dashboard');
             }, function(error){
               return;
             });
@@ -45,6 +45,23 @@ angular
               $state.go('home');
             }, function(error){
               return;
+            });
+          }
+        }
+      })
+      .state('dashboard', {
+        url: '/dashboard',
+        controller: 'DashboardCtrl as dashboardCtrl',
+        templateUrl: 'dashboard/index.html',
+        resolve: {
+          auth: function($state, Users, Auth){
+            return Auth.$requireAuth().catch(function(){
+              $state.go('home');
+            });
+          },
+          dashboard: function(Users, Auth){
+            return Auth.$requireAuth().then(function(auth){
+              return Users.getProfile(auth.uid).$loaded();
             });
           }
         }
