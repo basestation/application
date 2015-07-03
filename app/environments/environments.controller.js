@@ -8,7 +8,7 @@ angular.module('basestationApp')
     };
     environmentsCtrl.createEnvironment = function(){
       environmentsCtrl.environments.$add(environmentsCtrl.newEnvironment).then(function(ref){
-        $state.go('environments', {environmentId: ref.key()});
+        $state.go('environments.create', {environmentId: ref.key()});
       });
     };
 
