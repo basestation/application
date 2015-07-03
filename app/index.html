@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -35,46 +36,63 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#/dashboard">Dashbaord</a></li>
-        <li><a class="fa-microphone" href="#/channels"> Channels</a></li>
+        <li><a href="#/about"><i class="fa fa-asterisk">&nbsp; About</i></a></li>
+        <li><a href="#/dashboard"><i class="fa fa-dashboard">&nbsp; Dashboard</i></a></li>
+        <li><a href="#/channels"><i class="fa fa-comments">&nbsp; Channels</i></a></li>
+
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-gears"></i>&nbsp; Processes <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#/assets"><i class="fa fa-laptop">&nbsp; Assets</i></a></li>
+            <li><a href="#/changes"><i class="fa fa-code">&nbsp; Changes</i></a></li>
+            <li><a href="#/events"><i class="fa fa-bullseye">&nbsp; Events</i></a></li>
+            <li><a href="#/incidents"><i class="fa fa-warning">&nbsp; Incidents</i></a></li>
+            <li><a href="#/problems"><i class="fa fa-bar-chart">&nbsp; Problems</i></a></li>
+            <li><a href="#/releases"><i class="fa fa-archive">&nbsp; Releases</i></a></li>
+            <li><a href="#/requests"><i class="fa fa-ticket">&nbsp; Requests</i></a></li>
+            <li><a href="#/suppliers"><i class="fa fa-building">&nbsp; Suppliers</i></a></li>
           </ul>
         </li>
-      </ul>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-puzzle-piece"></i>&nbsp; Configuration <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#/accounts"><i class="fa fa-list-alt">&nbsp; Accounts</i></a></li>
+            <li><a href="#/applications"><i class="fa fa-cube">&nbsp; Applications</i></a></li>
+            <li><a href="#/capabilities"><i class="fa fa-briefcase">&nbsp; Capabilities</i></a></li>
+            <li><a href="#/devices"><i class="fa fa-server">&nbsp; Devices</i></a></li>
+            <li><a href="#/environments"><i class="fa fa-map-marker">&nbsp; Environments</i></a></li>
+            <li><a href="#/instances"><i class="fa fa-cubes">&nbsp; Instances</i></a></li>
+            <li><a href="#/monitors"><i class="fa fa-heartbeat">&nbsp; Monitors</i></a></li>
+            <li><a href="#/networks"><i class="fa fa-sitemap">&nbsp; Networks</i></a></li>
+            <li><a href="#/permissions"><i class="fa fa-lock">&nbsp; Permissions</i></a></li>
+            <li><a href="#/profiles"><i class="fa fa-users">&nbsp; Profiles</i></a></li>
+            <li><a href="#/roles"><i class="fa fa-street-view">&nbsp; Roles</i></a></li>
+            <li><a href="#/services"><i class="fa fa-gear">&nbsp; Services</i></a></li>
+          </ul>
+        </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-book"></i>&nbsp; Knowledge Base <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#/known-errors"><i class="fa fa-bookmark">&nbsp; Known Errors</i></a></li>
+          <li><a href="#/links"><i class="fa fa-link">&nbsp; Links</i></a></li>
+          <li><a href="#/policies"><i class="fa fa-file-powerpoint-o">&nbsp; Policies</i></a></li>
+          <li><a href="#/procedures"><i class="fa fa-file-text">&nbsp; Procedures</i></a></li>
+        </ul>
+      </li>
+    </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/profile">Profile</a></li>
+        <li><a href="#/profile"><i class="fa fa-user">&nbsp; My Profile</i></a></li>
       </ul>
     </div>
   </div>
 </nav>
-<!--
+
     <div class="container">
-      <div class="row row-offcanvas row-offcanvas-left">
--->
-        <!-- sidebar -->
-<!--        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-            </ul>
-        </div>
--->
+
         <!-- main area -->
         <div class="col-xs-12 col-sm-9">
             <ui-view></ui-view> <!-- main view -->
         </div><!-- /.col-xs-12 main -->
-    </div><!--/.row-->
   </div><!--/.container-->
 </div><!--/.page-container-->
 
@@ -101,13 +119,9 @@
     <script src="channels/channels.service.js"></script>
     <script src="channels/messages.service.js"></script>
     <script src="channels/messages.controller.js"></script>
+    <script src="environments/environments.service.js"></script>
+    <script src="environments/environments.controller.js"></script>
     <!-- endbuild -->
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('[data-toggle=offcanvas]').click(function() {
-          $('.row-offcanvas').toggleClass('active');
-        });
-      });
-    </script>
+
 </body>
 </html>

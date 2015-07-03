@@ -66,6 +66,10 @@ angular
           }
         }
       })
+      .state('about', {
+        url: '/about',
+        templateUrl: 'about/index.html'
+      })
       .state('profile', {
         url: '/profile',
         controller: 'ProfileCtrl as profileCtrl',
@@ -82,6 +86,26 @@ angular
             });
           }
         }
+      })
+      .state('environments', {
+        url: '/environments',
+        controller: 'EnvironmentsCtrl as environmentsCtrl',
+        templateUrl: 'environments/index.html',
+        resolve: {
+          environments: function (Environments){
+            return Environments.$loaded();
+          },
+          auth: function($state, Users, Auth){
+            return Auth.$requireAuth().catch(function(){
+              $state.go('home');
+            });
+          }
+        }
+      })
+      .state('environments.create', {
+        url: '/create',
+        templateUrl: 'environments/create.html',
+        controller: 'EnvironmentsCtrl as environmentsCtrl'
       })
       .state('channels', {
         url: '/channels',
